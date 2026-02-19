@@ -18,6 +18,7 @@ connection = pymysql.connect(
 @app.route('/')
 def hello_world():
     return 'Hello, World! Happy to see you'
+    return 'HOIII'
 
 @app.route('/welcome')
 def welcome():

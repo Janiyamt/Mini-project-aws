@@ -17,6 +17,7 @@ connection = pymysql.connect(
 
 @app.route('/')
 def hello_world():
+    return 'Hello, World! Happy to see you'
     return 'HOIII'
 
 @app.route('/welcome')
@@ -56,7 +57,7 @@ def update_product(code):
 
     # Validate the product data
     if not all(key in hospital_data for key in ('code', 'name', 'email', 'mobile','address','location','pincode')):
-        return jsonify({'message': 'Missing product data'}), 400
+        return jsonify({'message': 'Missing product data which is required to process this request'}), 400
 
     # Update product data in the database
     with connection.cursor() as cursor:
